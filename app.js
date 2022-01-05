@@ -2,11 +2,11 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const mysqlConnection = require('./connection')
 const app = express()
-const bookdir = require('./routes/book')
+const persondir = require('./routes/person')
 
 app.set("view engine","ejs")
 app.use(bodyParser.json());
-app.use("/book", bookdir)
+app.use("/person", persondir)
 
 app.get('/',(req,res)=>{
     res.render("index")
